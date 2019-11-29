@@ -1,0 +1,115 @@
+html{
+	font-family: "微软雅黑","microsoft yahei";
+}
+body{
+	background: #FFF;
+}
+
+.type-area{
+	width:1200px !important;
+	margin: 0 auto;
+}
+header{
+	width:100%;
+	height:80px;
+}
+header > div{
+	line-height: 80px;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction:row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+header > div h1{
+	width:124px;
+	line-height: normal;
+	margin:0;
+	padding-top: calc(37px - 16px);
+}
+header > div h1 img{
+	width: 100%;
+}
+header > div > nav {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction:row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+header > div > nav a{
+	width:110px;
+	font-size:16px;
+	color:#454545;
+	text-align: center;
+}
+header > div > nav a:hover, header > div > nav a.ck{
+	background: #9c0032;
+	color:#FFF !important;
+}
+.banner{
+	width:100%;
+	height:600px;
+	overflow: hidden;
+	position:relative;
+}
+.banner:before{
+	content: '';
+	display: block;
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background:rgba(0,0,0,.6);
+	z-index: 3;
+}
+.boot-item{
+	opacity: 1;
+    z-index: 2;
+	-webkit-transition: opacity ease-in-out 1s;
+    -moz-transition: opacity ease-in-out 1s;
+    -ms-transition: opacity ease-in-out 1s;
+    -o-transition: opacity ease-in-out 1s;
+    transition: opacity ease-in-out 1s;
+}
+.banner img{
+	width:100%;
+	-webkit-transform-origin: 100% 0%;
+    -moz-transform-origin: 100% 0%;
+    -ms-transform-origin: 100% 0%;
+    -o-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    -webkit-animation: kenburns_zoomInOut 25s linear 0s infinite alternate;
+    -moz-animation: kenburns_zoomInOut 25s linear 0s infinite alternate;
+    -o-animation: kenburns_zoomInOut 25s linear 0s infinite alternate;
+    -ms-animation: kenburns_zoomInOut 25s linear 0s infinite alternate;
+    animation: kenburns_zoomInOut 25s linear 0s infinite alternate;
+}
+
+.content{
+	width:100%;
+	overflow: hidden;
+}
+
+.small-title{
+	text-align: center;
+	margin: 0;
+	font-size:28px;
+	color:#323232;
+	letter-spacing: 2px;
+}
+.small-title span{
+	font-size:12px;
+	color:#9a9a9a;
+	display: block;
+	line-height:34px;
+	letter-spacing:normal;
+}
+.customer{
+	width:100%;
+	overflow: hidden;
+	padding-top:80px;
+}
