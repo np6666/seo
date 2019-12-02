@@ -281,6 +281,11 @@ header > div > nav a:hover, header > div > nav a.ck{
 	background: #f0f0f0;
 	margin-bottom:25px;
 	padding: 10px;
+	display: -webkit-box;
+	word-break:break-all;
+	-webkit-line-clamp:2;
+	text-overflow: ellipsis;
+    overflow:hidden;
 }
 .carousel-video-list ul li:last-child{
 	margin: 0;
@@ -326,7 +331,10 @@ header > div > nav a:hover, header > div > nav a.ck{
 	background: #9c0032;
 }
 .carousel-video-list button.top{
-	
+	margin-bottom:44px;
+}
+.carousel-video-list button.bottom{
+	margin-top:44px;
 }
 .carousel-video-list button.top:before,.carousel-video-list button.bottom:before{
 	content: '';
