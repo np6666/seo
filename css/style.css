@@ -896,4 +896,14 @@ header>div>nav a.ck {
 	.banner>p{
 		width:460px;
 	}
+	.relation-bj ul{
+		margin: 8% auto 100px;
+	}
+	.relation-bj ul li{
+		font-size: 44px;
+		line-height: 50px;
+	}
+	.relation-bj ul li:first-child, .relation-bj ul li:nth-child(2){
+		padding-right: 20%;
+	}
 }
