@@ -83,11 +83,11 @@ header>div>nav a.ck {
 }
 
 .banner-img {
-	height:auto !important;
+	height: auto !important;
 }
 
 .banner-img img {
-	width:100%;
+	width: 100%;
 	float: left;
 }
 
@@ -794,34 +794,40 @@ header>div>nav a.ck {
 	width: 165px;
 	float: left;
 }
-.portable>div dl dt{
-	width:auto;
-	height:auto;
-	padding:10px;
+
+.portable>div dl dt {
+	width: auto;
+	height: auto;
+	padding: 10px;
 }
-.portable>div dl dt img{
-	width:288px;
+
+.portable>div dl dt img {
+	width: 288px;
 }
-.portable > p{
-	font-size:14px;
-	line-height:25px;
-	padding:60px 122px 116px;
-	color:#656565;
+
+.portable>p {
+	font-size: 14px;
+	line-height: 25px;
+	padding: 60px 122px 116px;
+	color: #656565;
 }
-.portable > h4{
+
+.portable>h4 {
 	text-align: center;
 	font-weight: normal;
-	font-size:22px;
-	color:#676767;
+	font-size: 22px;
+	color: #676767;
 	margin-bottom: 116px;
 }
-.portable > h4 b{
-	font-size:32px;
+
+.portable>h4 b {
+	font-size: 32px;
 }
-.cooperation-ul{
+
+.cooperation-ul {
 	width: 100%;
 	overflow: hidden;
-	padding:100px 130px 0;
+	padding: 100px 130px 0;
 	display: -webkit-flex;
 	display: flex;
 	flex-direction: row;
@@ -829,47 +835,65 @@ header>div>nav a.ck {
 	justify-content: space-between;
 }
 
-.cooperation-ul li p{
+.cooperation-ul li p {
 	text-align: center;
-	padding:12px 0 120px;
-	color:#666;
-	font-size:14px;
-	line-height:25px;
+	padding: 12px 0 120px;
+	color: #666;
+	font-size: 14px;
+	line-height: 25px;
 }
-.culture-p{
-	font-size:14px;
-	line-height:25px;
+
+.culture-p {
+	font-size: 14px;
+	line-height: 25px;
 	padding: 22px 27% 30px;
-	color:#666;
+	color: #666;
 }
-.relation-bj{
-	width:100%;
+
+.relation-bj {
+	width: 100%;
 	overflow: hidden;
 	min-width: 1200px;
 	background: url(../images/relation_bk.jpg) no-repeat;
-	background-size:100%;
+	background-size: 100%;
 }
-.relation-bj ul{
-	width:1200px;
+
+.relation-bj ul {
+	width: 1200px;
 	margin: 11% auto 130px;
 	padding-left: 36px;
 }
-.relation-bj ul li{
-	font-size:55px;
-	color:#343436;
-	line-height:66px;
+
+.relation-bj ul li {
+	font-size: 55px;
+	color: #343436;
+	line-height: 66px;
 	font-weight: bold;
-	width:660px;
+	width: 660px;
 	margin-bottom: 6px;
 }
-.relation-bj ul li:first-child,.relation-bj ul li:nth-child(2){
-	padding-right:100px;
+
+.relation-bj ul li:first-child,
+.relation-bj ul li:nth-child(2) {
+	padding-right: 100px;
 	text-align: center;
 }
-.relation-bj ul li img{
+
+.relation-bj ul li img {
 	display: inline-block;
-	width:217px;
+	width: 217px;
 }
-.relation-bj ul li em{
-	margin-right:165px;
+
+.relation-bj ul li em {
+	margin-right: 165px;
+}
+
+
+@media screen and (max-width: 1600px) {
+	.banner{
+		height:430px;
+	}
+	.banner>p{
+		width:460px;
+	}
 }
