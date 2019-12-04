@@ -517,8 +517,7 @@ header>div>nav a.ck {
 }
 
 .footer>div {
-	height: 200px;
-	line-height: 200px;
+	height: auto;
 	display: -webkit-flex;
 	display: flex;
 	flex-direction: row;
@@ -526,20 +525,14 @@ header>div>nav a.ck {
 	justify-content: center;
 }
 
-.footer>div b {
-	font-size: 65px;
-	display: block;
-	margin-right: 160px;
-}
-
 .footer>div ul {
-	padding-top: 30px;
+	padding: 18px 0;
 	overflow: hidden;
 }
 
 .footer>div ul li {
-	line-height: 46px;
-	font-size: 20px;
+	line-height: 25px;
+	font-size: 14px;
 }
 
 .manifesto {
