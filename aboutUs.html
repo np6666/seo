@@ -68,21 +68,21 @@
 			<section class="equipment">
 				<div class="type-area">
 					<h3 class="small-title">设备应用<span>Equipment application</span></h3>
-					<div class="carousel_img swiper-container">
+					<div class="carousel_img roll">
 						<button class="l"></button>
-						<ul class="swiper-wrapper">
-							<li class="swiper-slide"><img src="images/equipment_01.jpg" alt="XX公司军事设备试验img1" /></li>
-							<li class="swiper-slide"><img src="images/equipment_02.jpg" alt="XX公司军事设备试验img2" /></li>
-							<li class="swiper-slide"><img src="images/equipment_03.jpg" alt="XX公司军事设备试验img3" /></li>
-							<li class="swiper-slide"><img src="images/equipment_04.jpg" alt="XX公司军事设备试验img4" /></li>
-							<li class="swiper-slide"><img src="images/equipment_05.jpg" alt="XX公司军事设备试验img5" /></li>
-							<li class="swiper-slide"><img src="images/equipment_06.jpg" alt="XX公司军事设备试验img6" /></li>
-							<li class="swiper-slide"><img src="images/equipment_07.jpg" alt="XX公司军事设备试验img7" /></li>
-							<li class="swiper-slide"><img src="images/equipment_08.jpg" alt="XX公司军事设备试验img8" /></li>
-							<li class="swiper-slide"><img src="images/equipment_09.jpg" alt="XX公司军事设备试验img9" /></li>
-							<li class="swiper-slide"><img src="images/equipment_10.jpg" alt="XX公司军事设备试验img10" /></li>
-							<li class="swiper-slide"><img src="images/equipment_11.jpg" alt="XX公司军事设备试验img11" /></li>
-							<li class="swiper-slide"><img src="images/equipment_12.jpg" alt="XX公司军事设备试验img12" /></li>
+						<ul class="roll-ul">
+							<li><img src="images/equipment_01.jpg" alt="XX公司军事设备试验img1" /></li>
+							<li><img src="images/equipment_02.jpg" alt="XX公司军事设备试验img2" /></li>
+							<li><img src="images/equipment_03.jpg" alt="XX公司军事设备试验img3" /></li>
+							<li><img src="images/equipment_04.jpg" alt="XX公司军事设备试验img4" /></li>
+							<li><img src="images/equipment_05.jpg" alt="XX公司军事设备试验img5" /></li>
+							<li><img src="images/equipment_06.jpg" alt="XX公司军事设备试验img6" /></li>
+							<li><img src="images/equipment_07.jpg" alt="XX公司军事设备试验img7" /></li>
+							<li><img src="images/equipment_08.jpg" alt="XX公司军事设备试验img8" /></li>
+							<li><img src="images/equipment_09.jpg" alt="XX公司军事设备试验img9" /></li>
+							<li><img src="images/equipment_10.jpg" alt="XX公司军事设备试验img10" /></li>
+							<li><img src="images/equipment_11.jpg" alt="XX公司军事设备试验img11" /></li>
+							<li><img src="images/equipment_12.jpg" alt="XX公司军事设备试验img12" /></li>
 						</ul>
 						<button class="r"></button>
 					</div>
@@ -129,27 +129,34 @@
 	<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
 	<script type="text/javascript" src="js/swiper.min.js" ></script>
 	<script>
-		var swiper = new Swiper('.swiper-container', {
-			width:380,
-  			loop: true,
-      		loopFillGroupWithBlank: true,
-      		slidesOffsetBefore : 380,
-      		autoplay:true,
-      		noSwiping : true,
-			noSwipingClass : 'swiper-slide',
-      		navigation: {
-		        nextEl: '.swiper-container .r',
-		        prevEl: '.swiper-container .l',
-		    },
-	      	
-	    });
-	    //获取宽度
-		var ul = $('.swiper-wrapper'),
-			li = ul.find('li'),
-			width = 0;
-		for(var i=0;i<li.length;i++){
-			width += $(li[i]).width();
-		}
-		ul.width(width+260);
+//		    transition-duration: 0ms;
+//  transform: translate3d(0px, 0px, 0px);
+		var zj = {
+			_init: false,
+			/**
+			 * @param {String} name
+			 * @param {Object} params 用于控制滑动的属性
+			 * 
+			 */
+			roll: function(name, params){
+				let _name = $(name);
+				let boxWidth = 0,
+					rollBox = $(params.rollBox),
+					rollSonBox = rollBox.find(params.rollSonBox);
+				
+				//获取所有子标签的宽度,设置父级的宽度
+				let width = 0;
+				for(var i=0,len=rollSonBox.length;i<len;i++){
+					width += $(rollSonBox[i]).width();
+				}
+				console.log(rollSonBox)
+				
+			}
+		};
+		zj.roll('.roll',{
+			rollBox:'.roll-ul',
+			rollSonBox: 'li',
+			interval:25
+		})
 	</script>
 </html>
