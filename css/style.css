@@ -1007,33 +1007,39 @@ header>div>nav a.ck {
 	z-index: 1;
 }
 
-.pro-box{
-	width:100%;
+.pro-box {
+	width: 100%;
 	min-width: 1200px;
 	overflow: hidden;
-	padding-top:312px;
+	padding-top: 312px;
 }
-.pro-box-one{
-	background:url(../images/pro_box_bj_01.jpg) no-repeat;
-	background-size:100%;
+
+.pro-box-one {
+	background: url(../images/pro_box_bj_01.jpg) no-repeat;
+	background-size: 100%;
 }
-.pro-box-two{
-	background:url(../images/pro_box_bj_02.jpg) no-repeat;
-	background-size:100%;
+
+.pro-box-two {
+	background: url(../images/pro_box_bj_02.jpg) no-repeat;
+	background-size: 100%;
 }
-.pro-box-ul{
-	padding:0 12px;
+
+.pro-box-ul {
+	padding: 0 12px;
 }
-.pro-box-ul>li{
-	background:#FFF;
-	box-shadow: 0 0 12px rgba(0,0,0,.6);
-	margin-bottom:54px;
-	padding:20px 46px 40px 64px;
+
+.pro-box-ul>li {
+	background: #FFF;
+	box-shadow: 0 0 12px rgba(0, 0, 0, .6);
+	margin-bottom: 54px;
+	padding: 20px 46px 40px 64px;
 }
-.pro-box-ul>li h3 span{
-	line-height:30px;
+
+.pro-box-ul>li h3 span {
+	line-height: 30px;
 }
-.pro-box-ul>li>ol{
+
+.pro-box-ul>li>ol {
 	display: -webkit-flex;
 	display: flex;
 	flex-direction: row;
@@ -1041,59 +1047,73 @@ header>div>nav a.ck {
 	justify-content: space-between;
 	align-items: center;
 }
-.pro-box-ul>li>ol li img{
+
+.pro-box-ul>li>ol li img {
 	float: left;
 }
-.pro-box-ul>li>ol li p{
-	font-size:13px;
-	color:#000;
-	line-height:20px;
+
+.pro-box-ul>li>ol li p {
+	font-size: 13px;
+	color: #000;
+	line-height: 20px;
 }
-.ul-one li:first-child h3{
-	margin-bottom:12px;
+
+.ul-one li:first-child h3 {
+	margin-bottom: 12px;
 }
-.ul-one li:first-child ol li:first-child{
+
+.ul-one li:first-child ol li:first-child {
 	margin-right: 75px;
 }
-.ul-one li:nth-child(2) ol{
-	align-items:flex-end !important;
+
+.ul-one li:nth-child(2) ol {
+	align-items: flex-end !important;
 }
-.ul-one li:nth-child(2) ol li:first-child{
-	margin-right:50px;
+
+.ul-one li:nth-child(2) ol li:first-child {
+	margin-right: 50px;
 }
-.ul-one li:nth-child(2) ol li:nth-child(2){
+
+.ul-one li:nth-child(2) ol li:nth-child(2) {
 	margin-right: 32px;
 }
-.ul-one li:nth-child(3) ol li:first-child{
-	margin-right:20px;
+
+.ul-one li:nth-child(3) ol li:first-child {
+	margin-right: 20px;
 }
-.ul-one li:nth-child(3) ol li:nth-child(2){
-	margin-right:65px;
+
+.ul-one li:nth-child(3) ol li:nth-child(2) {
+	margin-right: 65px;
 }
-.ul-one li:nth-child(3) ol li:nth-child(3) p{
+
+.ul-one li:nth-child(3) ol li:nth-child(3) p {
 	text-indent: 2em;
 }
-.ul-one li:nth-child(2) h3,.ul-one li:nth-child(3) h3{
+
+.ul-one li:nth-child(2) h3,
+.ul-one li:nth-child(3) h3 {
 	margin-bottom: 20px;
 }
-.pro-box-two .ul-one li:nth-child(1) ol li:first-child{
-	margin-right:12px;
+
+.pro-box-two .ul-one li:nth-child(1) ol li:first-child {
+	margin-right: 12px;
 }
-.pro-box-two .ul-one li:nth-child(1) ol li:nth-child(2){
-	margin-right:65px;
+
+.pro-box-two .ul-one li:nth-child(1) ol li:nth-child(2) {
+	margin-right: 65px;
 }
-.pro-box-two .ul-one li:nth-child(2) ol{
-	align-items:center !important;
+
+.pro-box-two .ul-one li:nth-child(2) ol {
+	align-items: center !important;
 }
-.pro-box-two .ul-one li:nth-child(2) ol p{
+
+.pro-box-two .ul-one li:nth-child(2) ol p {
 	text-indent: 2em;
 }
-.pro-box-two .ul-one li:nth-child(2) ol li:last-child{
+
+.pro-box-two .ul-one li:nth-child(2) ol li:last-child {
 	margin: 0;
 }
-
-
-
 
 @media screen and (max-width: 1600px) {
 	.banner {
@@ -1113,7 +1133,7 @@ header>div>nav a.ck {
 	.relation-bj ul li:nth-child(2) {
 		padding-right: 20%;
 	}
-	.pro-box{
+	.pro-box {
 		padding-top: 220px;
 	}
 }

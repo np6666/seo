@@ -7,6 +7,7 @@
 		<meta name="Description" content="通过html标签及属性的使用提高网站被爬虫爬取的几率，使用户百度时网站尽量排在前面，提高用户的点击率"/>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" href="css/bootstrap-touch-slider.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
 		<link rel="stylesheet" href="css/mui.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
@@ -67,21 +68,21 @@
 			<section class="equipment">
 				<div class="type-area">
 					<h3 class="small-title">设备应用<span>Equipment application</span></h3>
-					<div class="carousel_img">
+					<div class="carousel_img swiper-container">
 						<button class="l"></button>
-						<ul>
-							<li><img src="images/equipment_01.jpg" alt="XX公司军事设备试验img1" /></li>
-							<li><img src="images/equipment_02.jpg" alt="XX公司军事设备试验img2" /></li>
-							<li><img src="images/equipment_03.jpg" alt="XX公司军事设备试验img3" /></li>
-							<li><img src="images/equipment_04.jpg" alt="XX公司军事设备试验img4" /></li>
-							<li><img src="images/equipment_05.jpg" alt="XX公司军事设备试验img5" /></li>
-							<li><img src="images/equipment_06.jpg" alt="XX公司军事设备试验img6" /></li>
-							<li><img src="images/equipment_07.jpg" alt="XX公司军事设备试验img7" /></li>
-							<li><img src="images/equipment_08.jpg" alt="XX公司军事设备试验img8" /></li>
-							<li><img src="images/equipment_09.jpg" alt="XX公司军事设备试验img9" /></li>
-							<li><img src="images/equipment_10.jpg" alt="XX公司军事设备试验img10" /></li>
-							<li><img src="images/equipment_11.jpg" alt="XX公司军事设备试验img11" /></li>
-							<li><img src="images/equipment_12.jpg" alt="XX公司军事设备试验img12" /></li>
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide"><img src="images/equipment_01.jpg" alt="XX公司军事设备试验img1" /></li>
+							<li class="swiper-slide"><img src="images/equipment_02.jpg" alt="XX公司军事设备试验img2" /></li>
+							<li class="swiper-slide"><img src="images/equipment_03.jpg" alt="XX公司军事设备试验img3" /></li>
+							<li class="swiper-slide"><img src="images/equipment_04.jpg" alt="XX公司军事设备试验img4" /></li>
+							<li class="swiper-slide"><img src="images/equipment_05.jpg" alt="XX公司军事设备试验img5" /></li>
+							<li class="swiper-slide"><img src="images/equipment_06.jpg" alt="XX公司军事设备试验img6" /></li>
+							<li class="swiper-slide"><img src="images/equipment_07.jpg" alt="XX公司军事设备试验img7" /></li>
+							<li class="swiper-slide"><img src="images/equipment_08.jpg" alt="XX公司军事设备试验img8" /></li>
+							<li class="swiper-slide"><img src="images/equipment_09.jpg" alt="XX公司军事设备试验img9" /></li>
+							<li class="swiper-slide"><img src="images/equipment_10.jpg" alt="XX公司军事设备试验img10" /></li>
+							<li class="swiper-slide"><img src="images/equipment_11.jpg" alt="XX公司军事设备试验img11" /></li>
+							<li class="swiper-slide"><img src="images/equipment_12.jpg" alt="XX公司军事设备试验img12" /></li>
 						</ul>
 						<button class="r"></button>
 					</div>
@@ -125,4 +126,30 @@
 			</div>
 		</footer>
 	</body>
+	<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
+	<script type="text/javascript" src="js/swiper.min.js" ></script>
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+			width:380,
+  			loop: true,
+      		loopFillGroupWithBlank: true,
+      		slidesOffsetBefore : 380,
+      		autoplay:true,
+      		noSwiping : true,
+			noSwipingClass : 'swiper-slide',
+      		navigation: {
+		        nextEl: '.swiper-container .r',
+		        prevEl: '.swiper-container .l',
+		    },
+	      	
+	    });
+	    //获取宽度
+		var ul = $('.swiper-wrapper'),
+			li = ul.find('li'),
+			width = 0;
+		for(var i=0;i<li.length;i++){
+			width += $(li[i]).width();
+		}
+		ul.width(width+260);
+	</script>
 </html>
