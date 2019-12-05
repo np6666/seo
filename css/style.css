@@ -24,6 +24,7 @@ p {
 header {
 	width: 100%;
 	height: 80px;
+	overflow: hidden;
 }
 
 header>div {
@@ -881,22 +882,238 @@ header>div>nav a.ck {
 	margin-right: 165px;
 }
 
+.pro-one ul {
+	width: 100%;
+	overflow: hidden;
+	padding: 72px 98px 90px 105px;
+}
+
+.pro-one ul li {
+	width: 50%;
+	height: auto;
+	float: left;
+	background: #fff;
+	position: relative;
+	box-shadow: 0 0 16px rgba(0, 0, 0, .6);
+}
+
+.pro-one ul li:nth-child(1),
+.pro-one ul li:nth-child(2) {
+	height: 334px;
+}
+
+.pro-one ul li:nth-child(3) {
+	height: 374px;
+}
+
+.pro-one ul li:nth-child(4) {
+	height: 358px;
+}
+
+.pro-one ul li:nth-child(1) {
+	z-index: 10;
+}
+
+.pro-one ul li:nth-child(2),
+.pro-one ul li:nth-child(3) {
+	padding: 20px 50px 0 100px;
+	z-index: 9;
+}
+
+.pro-one ul li:nth-child(2) {
+	margin: 64px 0 127px -24px;
+}
+
+.pro-one ul li:nth-child(4) {
+	margin: -54px 0 0 -20px;
+	z-index: 10;
+}
+
+.pro-one ul li img {
+	width: 500px;
+	float: left;
+}
+
+.pro-one ul li h3 {
+	line-height: 83px;
+	font-size: 30px;
+	color: #656565;
+	margin: 0 0 38px;
+	position: relative;
+}
+
+.pro-one ul li h3:before {
+	content: '';
+	width: 58px;
+	height: 3px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #666;
+	display: inline-block;
+}
+
+.pro-one ul li p {
+	font-size: 12px;
+	color: #666;
+	line-height: 25px;
+}
+
+.pro-one ul li:before {
+	content: '';
+	border: 2px solid #003365;
+	display: block;
+	position: absolute;
+	z-index: -1;
+}
+
+.pro-one ul li:nth-child(1):before,
+.pro-one ul li:nth-child(3):before {
+	width: 85px;
+	height: 210px;
+	left: -28px;
+	bottom: -20px;
+}
+
+.pro-one ul li:nth-child(2):before,
+.pro-one ul li:nth-child(4):before {
+	width: 139px;
+	height: 142px;
+	right: -32px;
+	top: -34px;
+}
+
+.pro-one ul li:nth-child(2):after {
+	content: '';
+	display: block;
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #FFF;
+	z-index: 1;
+}
+
+.pro-one ul li:nth-child(3):after {
+	content: '';
+	display: block;
+	width: 75px;
+	height: 200px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: #FFF;
+	z-index: 1;
+}
+
+.pro-box{
+	width:100%;
+	min-width: 1200px;
+	overflow: hidden;
+	padding-top:312px;
+}
+.pro-box-one{
+	background:url(../images/pro_box_bj_01.jpg) no-repeat;
+	background-size:100%;
+}
+.pro-box-two{
+	background:url(../images/pro_box_bj_02.jpg) no-repeat;
+	background-size:100%;
+}
+.pro-box-ul{
+	padding:0 12px;
+}
+.pro-box-ul>li{
+	background:#FFF;
+	box-shadow: 0 0 12px rgba(0,0,0,.6);
+	margin-bottom:54px;
+	padding:20px 46px 40px 64px;
+}
+.pro-box-ul>li h3 span{
+	line-height:30px;
+}
+.pro-box-ul>li>ol{
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.pro-box-ul>li>ol li img{
+	float: left;
+}
+.pro-box-ul>li>ol li p{
+	font-size:13px;
+	color:#000;
+	line-height:20px;
+}
+.ul-one li:first-child h3{
+	margin-bottom:12px;
+}
+.ul-one li:first-child ol li:first-child{
+	margin-right: 75px;
+}
+.ul-one li:nth-child(2) ol{
+	align-items:flex-end !important;
+}
+.ul-one li:nth-child(2) ol li:first-child{
+	margin-right:50px;
+}
+.ul-one li:nth-child(2) ol li:nth-child(2){
+	margin-right: 32px;
+}
+.ul-one li:nth-child(3) ol li:first-child{
+	margin-right:20px;
+}
+.ul-one li:nth-child(3) ol li:nth-child(2){
+	margin-right:65px;
+}
+.ul-one li:nth-child(3) ol li:nth-child(3) p{
+	text-indent: 2em;
+}
+.ul-one li:nth-child(2) h3,.ul-one li:nth-child(3) h3{
+	margin-bottom: 20px;
+}
+.pro-box-two .ul-one li:nth-child(1) ol li:first-child{
+	margin-right:12px;
+}
+.pro-box-two .ul-one li:nth-child(1) ol li:nth-child(2){
+	margin-right:65px;
+}
+.pro-box-two .ul-one li:nth-child(2) ol{
+	align-items:center !important;
+}
+.pro-box-two .ul-one li:nth-child(2) ol p{
+	text-indent: 2em;
+}
+.pro-box-two .ul-one li:nth-child(2) ol li:last-child{
+	margin: 0;
+}
+
+
+
 
 @media screen and (max-width: 1600px) {
-	.banner{
-		height:430px;
+	.banner {
+		height: 430px;
 	}
-	.banner>p{
-		width:460px;
+	.banner>p {
+		width: 460px;
 	}
-	.relation-bj ul{
+	.relation-bj ul {
 		margin: 8% auto 56px;
 	}
-	.relation-bj ul li{
+	.relation-bj ul li {
 		font-size: 44px;
 		line-height: 50px;
 	}
-	.relation-bj ul li:first-child, .relation-bj ul li:nth-child(2){
+	.relation-bj ul li:first-child,
+	.relation-bj ul li:nth-child(2) {
 		padding-right: 20%;
+	}
+	.pro-box{
+		padding-top: 220px;
 	}
 }
