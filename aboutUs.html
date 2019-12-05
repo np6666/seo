@@ -142,21 +142,40 @@
 				let _name = $(name);
 				let boxWidth = 0,
 					rollBox = $(params.rollBox),
-					rollSonBox = rollBox.find(params.rollSonBox);
+					rollSonBox = rollBox.find(params.rollSonBox),
+					butL = $(params.butL),
+					butR = $(params.butR);
 				
 				//获取所有子标签的宽度,设置父级的宽度
 				let width = 0;
 				for(var i=0,len=rollSonBox.length;i<len;i++){
-					width += $(rollSonBox[i]).width();
+					if(!!params.interval){
+						width += $(rollSonBox[i]).width() + params.interval;
+					}else{
+						width += $(rollSonBox[i]).width();
+					}
 				}
+				rollBox.css({'width':width})
+				console.log(width);
 				console.log(rollSonBox)
+
 				
+				//左侧点击事件
+				butL.on('click', function(){
+					alert('left')
+				})
+				//右侧点击事件
+				butR.on('click', function(){
+					alert('right')
+				})
 			}
 		};
 		zj.roll('.roll',{
 			rollBox:'.roll-ul',
 			rollSonBox: 'li',
-			interval:25
+			// interval:25,
+			butL: '.roll .l',
+			butR: '.roll .r'
 		})
 	</script>
 </html>
