@@ -190,5 +190,29 @@ var zj = {
 				'transform': 'translate3d(0px, ' + num + 'px, 0px)'
 			});
 		}
+	},
+	/**
+	 * 顶部header 固定
+	 * @param {Object} name
+	 */
+	fixation: function(name){
+		let headerHeight = $(name).height();
+		window.onload = function(){
+			if($(window).scrollTop() > headerHeight){
+				$(name).addClass('header-fixation');
+			}
+			if($(window).scrollTop() < 20){
+				$(name).removeClass('header-fixation');
+			}
+		};
+		$(window).scroll(function(){
+			let topHeight = $(window).scrollTop();
+			if(topHeight > headerHeight){
+				$(name).addClass('header-fixation');
+			}
+			if(topHeight < 20){
+				$(name).removeClass('header-fixation');
+			}
+		})
 	}
 };
