@@ -36,11 +36,47 @@
 		<footer class="footer">
 			<div class="type-area">
 				<ul>
-					<li>TEL：4000-5599-81</li>
-					<li>邮箱：qmgfiy@126.com</li>
-					<li>地址：北京市丰台区小屯路8号</li>
+					<li>TEL：4000-5599-81<i></i>邮箱：qmgfiy@126.com<i></i>地址：北京市丰台区小屯路8号</li>
+					<li>@2014-2019，北京中军创恒科技有限公司. 京ICP备XXXXXXXX号-X</li>
+				</ul>
+				<ul class="footer-ewm">
+					<li>
+						<img src="images/erweim.jpg"/>
+						<p>微信客服</p>
+					</li>
+					<li>
+						<img src="images/erweim.jpg"/>
+						<p>微信公众号</p>
+					</li>
 				</ul>
 			</div>
 		</footer>
+		<!-- popup -->
+		<div class="popup">
+			<button class="kefu"></button>
+			<button class="history-top"></button>
+			<ul class="popup-info mui-hidden">
+				<li>联系我们</li>
+				<li><span class="mui-icon mui-icon-phone"></span>: 4000-5599-81</li>
+				<li>微信客服</li>
+				<li><img src="images/erweim.jpg"/></li>
+				<li>微信公众号</li>
+				<li><img src="images/erweim.jpg"/></li>
+			</ul>
+		</div>
 	</body>
+	<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
+	<script>
+		$('.kefu').on({
+			mouseover: function(){
+				$('.popup-info').removeClass('mui-hidden');
+			},
+			mouseout: function(){
+				$('.popup-info').addClass('mui-hidden');
+			}
+		})
+		$('.history-top').on('click',function(){
+			$('body,html').animate({scrollTop:0},600);
+		})
+	</script>
 </html>

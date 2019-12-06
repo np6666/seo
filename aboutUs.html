@@ -108,6 +108,22 @@
 									<span>02/12<i>2019</i></span>
 									<p>视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位</p>
 								</li>
+								<li>
+									<span>03/12<i>2019</i></span>
+									<p>视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位</p>
+								</li>
+								<li>
+									<span>04/12<i>2019</i></span>
+									<p>视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位</p>
+								</li>
+								<li>
+									<span>05/12<i>2019</i></span>
+									<p>视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位</p>
+								</li>
+								<li>
+									<span>06/12<i>2019</i></span>
+									<p>视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位视频占位，视频占位，视频占位，视频占位，视频占位，视频占位</p>
+								</li>
 							</ul>
 						</div>
 						<button class="bottom"></button>
@@ -119,63 +135,74 @@
 		<footer class="footer">
 			<div class="type-area">
 				<ul>
-					<li>TEL：4000-5599-81</li>
-					<li>邮箱：qmgfiy@126.com</li>
-					<li>地址：北京市丰台区小屯路8号</li>
+					<li>TEL：4000-5599-81<i></i>邮箱：qmgfiy@126.com<i></i>地址：北京市丰台区小屯路8号</li>
+					<li>@2014-2019，北京中军创恒科技有限公司. 京ICP备XXXXXXXX号-X</li>
+				</ul>
+				<ul class="footer-ewm">
+					<li>
+						<img src="images/erweim.jpg"/>
+						<p>微信客服</p>
+					</li>
+					<li>
+						<img src="images/erweim.jpg"/>
+						<p>微信公众号</p>
+					</li>
 				</ul>
 			</div>
 		</footer>
+		<!-- popup -->
+		<div class="popup">
+			<button class="kefu"></button>
+			<button class="history-top"></button>
+			<ul class="popup-info mui-hidden">
+				<li>联系我们</li>
+				<li><span class="mui-icon mui-icon-phone"></span>: 4000-5599-81</li>
+				<li>微信客服</li>
+				<li><img src="images/erweim.jpg"/></li>
+				<li>微信公众号</li>
+				<li><img src="images/erweim.jpg"/></li>
+			</ul>
+		</div>
 	</body>
 	<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
-	<script type="text/javascript" src="js/swiper.min.js" ></script>
+	<script type="text/javascript" src="js/globalZj.js" ></script>
 	<script>
-//		    transition-duration: 0ms;
-//  transform: translate3d(0px, 0px, 0px);
-		var zj = {
-			_init: false,
-			/**
-			 * @param {String} name
-			 * @param {Object} params 用于控制滑动的属性
-			 * 
-			 */
-			roll: function(name, params){
-				let _name = $(name);
-				let boxWidth = 0,
-					rollBox = $(params.rollBox),
-					rollSonBox = rollBox.find(params.rollSonBox),
-					butL = $(params.butL),
-					butR = $(params.butR);
-				
-				//获取所有子标签的宽度,设置父级的宽度
-				let width = 0;
-				for(var i=0,len=rollSonBox.length;i<len;i++){
-					if(!!params.interval){
-						width += $(rollSonBox[i]).width() + params.interval;
-					}else{
-						width += $(rollSonBox[i]).width();
-					}
-				}
-				rollBox.css({'width':width})
-				console.log(width);
-				console.log(rollSonBox)
-
-				
-				//左侧点击事件
-				butL.on('click', function(){
-					alert('left')
-				})
-				//右侧点击事件
-				butR.on('click', function(){
-					alert('right')
-				})
-			}
-		};
 		zj.roll('.roll',{
 			rollBox:'.roll-ul',
 			rollSonBox: 'li',
-			// interval:25,
+			margin:{
+				type: true,
+				direction: 'Left'
+			},
+			endNum: 3,
+			loop: {
+				type: true,
+				num: 3
+			},
 			butL: '.roll .l',
 			butR: '.roll .r'
+		});
+		$('.kefu').on({
+			mouseover: function(){
+				$('.popup-info').removeClass('mui-hidden');
+			},
+			mouseout: function(){
+				$('.popup-info').addClass('mui-hidden');
+			}
+		})
+		$('.history-top').on('click',function(){
+			$('body,html').animate({scrollTop:0},600);
+		})
+		zj.topRoll('.video-list-c',{
+			rollBox:'.video-list-c ul',
+			rollSonBox: 'li',
+			margin:{
+				type: true,
+				direction: 'Bottom'
+			},
+			endNum: 2,
+			butL: '.carousel-video-list .top',
+			butR: '.carousel-video-list .bottom'
 		})
 	</script>
 </html>
