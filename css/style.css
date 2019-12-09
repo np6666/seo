@@ -27,11 +27,11 @@ header {
 	height: 80px;
 	overflow: hidden;
 	background: #FFF;
-	position:fixed;
-	top:0;
-	left:0;
+	position: fixed;
+	top: 0;
+	left: 0;
 	z-index: 50;
-	border-bottom:1px solid rgba(0,0,0,.1)
+	border-bottom: 1px solid rgba(0, 0, 0, .1)
 }
 
 header>div {
@@ -357,6 +357,19 @@ header>div>nav a.ck {
 
 .carousel_img ul li {
 	margin-left: 20px;
+	position: relative;
+}
+
+.carousel_img ul li p {
+	width: 100%;
+	line-height: 45px;
+	font-size: 16px;
+	background: rgba(0, 0, 0, .7);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	color: #FFF;
 }
 
 .carousel_img ul li:first-child {
@@ -506,6 +519,7 @@ header>div>nav a.ck {
 }
 
 .video-list-c {
+	width: 720px;
 	height: 190px;
 	overflow: hidden;
 }
@@ -679,11 +693,61 @@ header>div>nav a.ck {
 	border-radius: 10px;
 	padding-top: 9px;
 	margin-bottom: 32px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.product-cont .new-pro-hover {
+	opacity: 1 !important;
+	-webkit-animation: newProBoxStart .5s;
+	-moz-animation: newProBoxStart .5s;
+	-ms-animation: newProBoxStart .5s;
+	animation: newProBoxStart .5s;
+}
+
+@keyframes newProBoxStart {
+	from {
+		-webkit-transform: translate3d(0, -274px, 0);
+		-moz-transform: translate3d(0, -274px, 0);
+		-ms-transform: translate3d(0, -274px, 0);
+		transform: translate3d(0, -274px, 0);
+	}
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 .product-cont .new-product li img {
 	width: 310px;
 	display: inline-block;
+}
+
+.new-product .new-pro-popup {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .7);
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	padding: 80px 15% 0;
+}
+
+.new-product .new-pro-popup p {
+	width: 100%;
+	color: #FFF;
+	text-align: center;
+	line-height: 32px;
+	font-size: 18px;
+}
+
+.new-product .new-pro-popup p:first-child {
+	line-height: 50px;
+	font-size: 22px;
 }
 
 .transmitter {
@@ -866,6 +930,19 @@ header>div>nav a.ck {
 	width: auto;
 	height: auto;
 	padding: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+.portable>div dl dt p {
+	width: 100%;
+	line-height: 45px;
+	background: rgba(0, 0, 0, .6);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 18px;
+	color: #FFF;
 }
 
 .portable>div dl dt img {
@@ -875,8 +952,13 @@ header>div>nav a.ck {
 .portable>p {
 	font-size: 14px;
 	line-height: 25px;
-	padding: 60px 122px 116px;
+	padding: 60px 122px 20px;
 	color: #656565;
+}
+
+.portable-video {
+	text-align: center;
+	display: block !important;
 }
 
 .portable>h4 {
@@ -1257,7 +1339,7 @@ header>div>nav a.ck {
 	font-size: 16px;
 	text-align: center;
 	line-height: 23px;
-	position:relative;
+	position: relative;
 }
 
 .popup-info li span {
@@ -1268,15 +1350,15 @@ header>div>nav a.ck {
 	margin-bottom: 5px;
 }
 
-.popup-info li:nth-child(2n):before{
+.popup-info li:nth-child(2n):before {
 	content: '';
-	width:100%;
-	height:1px;
+	width: 100%;
+	height: 1px;
 	display: inline-block;
-	background:#999;
-	position:absolute;
-	bottom:-2px;
-	left:0;
+	background: #999;
+	position: absolute;
+	bottom: -2px;
+	left: 0;
 	opacity: .4;
 }
 
@@ -1284,13 +1366,62 @@ header>div>nav a.ck {
 	font-size: 14px;
 	text-align: left;
 }
-.popup-info li:last-child:before{
+
+.popup-info li:last-child:before {
 	display: none;
 }
 
 .popup-info li img {
 	width: 80px;
 	display: inline-block;
+}
+
+.index-small-banner {
+	width: 100%;
+	min-width: 1200px;
+	overflow: hidden;
+	margin-bottom: 80px;
+}
+
+.index-small-banner img {
+	width: 100%;
+	float: left;
+}
+
+.del-list {
+	padding: 60px 0;
+}
+
+.del-list ul {
+	width: 100%;
+	overflow: hidden;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.del-list ul li {
+	width: 100%;
+	font-size: 18px;
+	color: #343434;
+	text-align: center;
+	line-height: 30px;
+	margin-bottom: 10px;
+}
+
+.del-list ul li img {
+	width: 49%;
+	height: 332px;
+}
+
+.del-list ul li img:first-child {
+	float: left;
+}
+
+.del-list ul li img:last-child {
+	float: right;
 }
 
 @media screen and (max-width: 1600px) {

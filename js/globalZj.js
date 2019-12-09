@@ -13,182 +13,113 @@ var zj = {
 	 * 	margin:{Object}
 	 * 	endNum:{Number}
 	 * 	loop:{Object}
-	 * 	butL || butR :{Object}
+	 * 	butLeftOrTop || butRightOrBottom :{String}
+	 * @params {Function} callback
 	 */
-	roll: function(name, params) {
+	roll: function(name, params, callback) {
 		let _name = $(name);
-		let boxWidth = 0,
-			rollBox = $(params.rollBox), //父级盒子
-			rollSonBox = rollBox.find(params.rollSonBox), //子级盒子
-			butL = $(params.butL), //左侧点击按钮
-			butR = $(params.butR), //右侧点击按钮
-			singleWidth = $(rollSonBox[0]).width(), //单个盒子的宽度
-			scrollNum = 0; //设置偏移度
-
+		let rollBox = $(params.rollBox), 					//父级盒子
+			rollSonBox = rollBox.find(params.rollSonBox), 	//子级盒子
+			butLeftOrTop = $(params.butOne), 				//点击按钮
+			butRightOrBottom = $(params.butTwo), 			//点击按钮
+			singleW_H = $(rollSonBox[0]).width(), 			//单个盒子的宽度或者高度  默认为宽度
+			scrollNum = 0, 									//设置偏移度
+			w_h = 0,										//设置父级盒子的宽或者高
+			margin = !!params.margin ? params.margin:false,	//用于控制盒子移动的方向
+			endNum = !!params.endNum ? Number(params.endNum):0,		//结束显示几个子盒子，默认为1
+			loop = !!params.loop ? params.loop:false;		//是否开启自动循环，默认关闭
+		
 		//获取所有子标签的宽度,设置父级的宽度
 		for(var i = 0, len = rollSonBox.length; i < len; i++) {
-			if(!!params.margin) {
-				boxWidth += $(rollSonBox[i]).width() + Number($(rollSonBox[i]).css('margin' + params.margin.direction).replace('px', ''));
-			} else {
-				boxWidth += $(rollSonBox[i]).width();
+			if(!!margin){
+				margin['num'] = Number(!!margin['num'] ? margin['num']:0) + Number($(rollSonBox[i]).css('margin' + margin.direction).replace('px', ''));
+				if(margin.direction == 'Left' || margin.direction == 'Right'){
+					w_h += $(rollSonBox[i]).width();
+				}else{
+					w_h += $(rollSonBox[i]).height();
+				}
+			}
+			
+		}
+		//设置父级盒子的宽或者高
+		w_h = w_h + (!!margin ? margin['num']:0);
+		//获取单个盒子的宽或者高 and 设置 偏移方向 ,默认为左
+		let scrollLeft = scrollNum + 'px,0,0';
+		if(!!margin){
+			if(margin.direction == 'Left' || margin.direction == 'Right'){
+				singleW_H = Number($(rollSonBox[0]).width()) + Number($(rollSonBox[1]).css('margin' + margin.direction).replace('px', ''));
+				rollBox.css({'width':w_h});
+			}else{
+				singleW_H = Number($(rollSonBox[0]).height()) + Number($(rollSonBox[1]).css('margin' + margin.direction).replace('px', ''));
+				scrollLeft = '0,'+scrollNum+'px,0';
+				rollBox.css({'height':w_h});
 			}
 		}
-		//设置父级盒子宽度和偏移度
+		
+		//设置父级盒子宽度和偏移度CSS
 		rollBox.css({
-			'width': boxWidth,
 			'transition-duration': '0ms',
-			'transform': 'translate3d(' + scrollNum + 'px, 0px, 0px)'
+			'transform': 'translate3d('+ scrollLeft +')'
 		});
 
-		//左侧点击事件
-		butR.on('click', function() {
-			if(scrollNum <= -boxWidth) return false;
-			if(!!params.margin) {
-				scrollNum = scrollNum - (singleWidth + Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', '')));
-			} else {
-				scrollNum = scrollNum - singleWidth;
-			}
-			if(!!params.endNum) {
-				let endNumberWidth = params.endNum * (singleWidth + (!!params.margin ? Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', '')) : 1)) - Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', ''));
-				if(scrollNum <= -(boxWidth - endNumberWidth)) {
-					scrollNum = -(boxWidth - endNumberWidth);
-				};
-			}
-			boxScroll(scrollNum);
-		})
-		//右侧点击事件
-		butL.on('click', function() {
+		//点击事件1
+		butLeftOrTop.on('click', function() {
 			if(scrollNum >= 0) return false;
-			if(!!params.margin) {
-				scrollNum = scrollNum + (singleWidth + Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', '')));
-			} else {
-				scrollNum = scrollNum + singleWidth;
-			}
-			scrollNum = scrollNum > 0 ? 0 : scrollNum;
-			boxScroll(scrollNum);
+			boxScroll(singleW_H)
 		})
-		//循环滚动
-		if(!!params.loop) {
-			loopAuto(true)
-		}
-
+		//点击事件2
+		butRightOrBottom.on('click', function() {
+			if(~scrollNum >= (w_h - endNum * singleW_H)) return false;
+			boxScroll(-Number(singleW_H))
+		})
+		
 		/**
 		 * 设置盒子偏移运动
 		 * @param {Number} num		传入偏移量
 		 */
 		function boxScroll(num) {
+			scrollNum = scrollNum + num;
+			let leftOrTop = '0,'+scrollNum+'px,0';
+			if(!!margin){
+				if(margin.direction == 'Left' || margin.direction == 'Right'){
+					leftOrTop = scrollNum + 'px,0,0';
+				}
+			}
 			rollBox.css({
 				'transition-duration': '300ms',
-				'transform': 'translate3d(' + num + 'px, 0px, 0px)'
+				'transform': 'translate3d('+ leftOrTop +')'
 			});
 		}
 		/**
 		 * 设置自动循环
 		 */
-		let setScrollNumber = true;
-
-		function loopAuto(type) {
-			if(!!type) {
-				let timer = setInterval(function() {
-					if(!setScrollNumber) {
-						clearInterval(timer);
-						scrollNum = 0;
-						rollBox.css({
-							'transition-duration': '0ms',
-							'transform': 'translate3d(' + scrollNum + 'px, 0px, 0px)'
-						});
-						setTimeout(function() {
-							setScrollNumber = true;
-							loopAuto(true)
-						}, 1500)
-						return false;
-					}
-					if(!!params.margin) {
-						scrollNum = scrollNum - (singleWidth + Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', '')));
-					} else {
-						scrollNum = scrollNum - singleWidth;
-					}
-					if(!!params.endNum) {
-						let endNumberWidth = params.endNum * (singleWidth + (!!params.margin ? Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', '')) : 1)) - Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', ''));
-						if(scrollNum <= -(boxWidth - endNumberWidth)) {
-							scrollNum = -(boxWidth - endNumberWidth);
-							setScrollNumber = false;
-						};
-					}
-					boxScroll(scrollNum);
-				}, params.loop.num * 1000)
+		var	timer;
+		function loopAuto() {
+			if(!!loop){
+				timer = setTimeout(function(){
+					if(~scrollNum >= (w_h - endNum * singleW_H)){
+						clearTimeout(timer);
+						scrollNum = singleW_H;
+						boxScroll(0);
+					};
+					loopAuto();
+					boxScroll(-Number(singleW_H));
+				}, loop.num * 1000)
 			}
-
 		}
-	},
-	topRoll: function(name, params, callback) {
-		let topBoxName = $(name);
-		let rollBox = $(params.rollBox), //父级盒子
-			rollSonBox = rollBox.find(params.rollSonBox), //子级盒子
-			singleHeight = $(rollSonBox[0]).height(), //单个盒子的宽度
-			butL = $(params.butL), //点击按钮
-			butR = $(params.butR), //点击按钮
-			scrollNum = 0, //设置偏移度
-			boxHeight = 0;
-
-		//获取所有子标签的宽度,设置父级的宽度
-		for(var i = 0, len = rollSonBox.length; i < len; i++) {
-			if(!!params.margin) {
-				boxHeight += $(rollSonBox[i]).height() + Number($(rollSonBox[i]).css('margin' + params.margin.direction).replace('px', ''));
-			} else {
-				boxHeight += $(rollSonBox[i]).height();
-			}
-			$(rollSonBox[i]).on('click', function() {
-				$(this).parent().find('li').removeClass('ck');
-				$(this).addClass('ck')
+		loopAuto();
+		//鼠标移入移除事件 ,如果开启自动播放时才启用该事件
+		if(!!loop){
+			rollBox.on({
+				mouseover: function(){
+					clearTimeout(timer);
+				},
+				mouseout: function(){
+					loopAuto();
+				}
 			})
 		}
-
-		rollBox.css({
-			'transition-duration': '0ms',
-			'transform': 'translate3d(0px, ' + scrollNum + 'px, 0px)'
-		});
-
-		butL.on('click', function() {
-			if(scrollNum <= ~boxHeight) return false;
-			if(!!params.margin) {
-				scrollNum = scrollNum - (singleHeight + Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', '')));
-			} else {
-				scrollNum = scrollNum - singleHeight;
-			}
-			if(!!params.endNum) {
-				let endNumberHeight = params.endNum * (singleHeight + (!!params.margin ? Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', '')) : 1)) - Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', ''));
-				if(scrollNum <= -(boxHeight - endNumberHeight)) {
-					scrollNum = -(boxHeight - endNumberHeight);
-				};
-			}
-			boxScroll(scrollNum);
-		})
-		butR.on('click', function() {
-			if(scrollNum >= 0) return false;
-			if(!!params.margin) {
-				scrollNum = scrollNum + (singleHeight + Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', '')));
-			} else {
-				scrollNum = scrollNum + singleHeight;
-			}
-			if(!!params.endNum) {
-				let endNumberHeight = params.endNum * (singleHeight + (!!params.margin ? Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', '')) : 1)) - Number($(rollSonBox[1]).css('margin' + params.margin.direction).replace('px', ''));
-				if(scrollNum <= -(boxHeight - endNumberHeight)) {
-					scrollNum = -(boxHeight - endNumberHeight);
-				};
-			}
-			boxScroll(scrollNum);
-		})
-
-		/**
-		 * 设置盒子偏移运动
-		 * @param {Number} num		传入偏移量
-		 */
-		function boxScroll(num) {
-			rollBox.css({
-				'transition-duration': '300ms',
-				'transform': 'translate3d(0px, ' + num + 'px, 0px)'
-			});
-		}
+		//回调函数，返回设定的参数
+		if(typeof(callback) === 'function') return callback(params);
 	}
 };

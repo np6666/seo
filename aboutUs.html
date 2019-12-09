@@ -17,7 +17,7 @@
 				<h1><img src="images/logo.png" alt="XXX公司LOGO"/><b>和平盾</b></h1>
 				<nav>
 					<a href="./index.html">首页</a>
-					<a class="ck" href="./aboutUs.html">关于我们</a>
+					<!--<a class="ck" href="./aboutUs.html">关于我们</a>-->
 					<a href="./product.html">产品介绍</a>
 					<a href="./cooperation.html">合作模式</a>
 					<a href="./culture.html">企业文化</a>
@@ -71,18 +71,18 @@
 					<div class="carousel_img roll">
 						<button class="l"></button>
 						<ul class="roll-ul">
-							<li><img src="images/equipment_01.jpg" alt="XX公司军事设备试验img1" /></li>
-							<li><img src="images/equipment_02.jpg" alt="XX公司军事设备试验img2" /></li>
-							<li><img src="images/equipment_03.jpg" alt="XX公司军事设备试验img3" /></li>
-							<li><img src="images/equipment_04.jpg" alt="XX公司军事设备试验img4" /></li>
-							<li><img src="images/equipment_05.jpg" alt="XX公司军事设备试验img5" /></li>
-							<li><img src="images/equipment_06.jpg" alt="XX公司军事设备试验img6" /></li>
-							<li><img src="images/equipment_07.jpg" alt="XX公司军事设备试验img7" /></li>
-							<li><img src="images/equipment_08.jpg" alt="XX公司军事设备试验img8" /></li>
-							<li><img src="images/equipment_09.jpg" alt="XX公司军事设备试验img9" /></li>
-							<li><img src="images/equipment_10.jpg" alt="XX公司军事设备试验img10" /></li>
-							<li><img src="images/equipment_11.jpg" alt="XX公司军事设备试验img11" /></li>
-							<li><img src="images/equipment_12.jpg" alt="XX公司军事设备试验img12" /></li>
+							<li><img src="images/equipment_01.jpg" alt="XX公司军事设备试验img1" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_02.jpg" alt="XX公司军事设备试验img2" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_03.jpg" alt="XX公司军事设备试验img3" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_04.jpg" alt="XX公司军事设备试验img4" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_05.jpg" alt="XX公司军事设备试验img5" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_06.jpg" alt="XX公司军事设备试验img6" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_07.jpg" alt="XX公司军事设备试验img7" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_08.jpg" alt="XX公司军事设备试验img8" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_09.jpg" alt="XX公司军事设备试验img9" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_10.jpg" alt="XX公司军事设备试验img10" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_11.jpg" alt="XX公司军事设备试验img11" /><p>第二届全国国防教育竞技大赛</p></li>
+							<li><img src="images/equipment_12.jpg" alt="XX公司军事设备试验img12" /><p>第二届全国国防教育竞技大赛</p></li>
 						</ul>
 						<button class="r"></button>
 					</div>
@@ -167,21 +167,6 @@
 	<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
 	<script type="text/javascript" src="js/globalZj.js" ></script>
 	<script>
-		zj.roll('.roll',{
-			rollBox:'.roll-ul',
-			rollSonBox: 'li',
-			margin:{
-				type: true,
-				direction: 'Left'
-			},
-			endNum: 3,
-			loop: {
-				type: true,
-				num: 3
-			},
-			butL: '.roll .l',
-			butR: '.roll .r'
-		});
 		$('.kefu').on({
 			mouseover: function(){
 				$('.popup-info').removeClass('mui-hidden');
@@ -193,16 +178,38 @@
 		$('.history-top').on('click',function(){
 			$('body,html').animate({scrollTop:0},600);
 		})
-		zj.topRoll('.video-list-c',{
-			rollBox:'.video-list-c ul',
-			rollSonBox: 'li',
-			margin:{
-				type: true,
-				direction: 'Bottom'
-			},
-			endNum: 2,
-			butL: '.carousel-video-list .top',
-			butR: '.carousel-video-list .bottom'
+		$(function(){
+			zj.roll('.roll',{
+				rollBox:'.roll-ul',
+				rollSonBox: 'li',
+				margin:{
+					direction: 'Left'
+				},
+				endNum: 3,
+				loop: {
+					num: 3
+				},
+				butOne: '.roll .l',
+				butTwo: '.roll .r'
+			});
+			zj.roll('.video-list-c',{
+				rollBox:'.video-list-c ul',
+				rollSonBox: 'li',
+				margin:{
+					direction: 'Bottom'
+				},
+				endNum: 2,
+				butOne: '.carousel-video-list .top',
+				butTwo: '.carousel-video-list .bottom'
+			},function(params){
+				let li = $(params.rollBox).find(params.rollSonBox);
+				for(let i=0,len=li.length;i<len;i++){
+					$(li[i]).on('click',function(){
+						$(this).parent().find('li').removeClass('ck');
+						$(this).addClass('ck');
+					})
+				}
+			});
 		})
 	</script>
 </html>
