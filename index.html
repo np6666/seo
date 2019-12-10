@@ -229,7 +229,7 @@
 				let li = $(params.rollBox).find(params.rollSonBox);
 				for(let i=0,len=li.length;i<len;i++){
 					$(li[i]).on('click',function(){
-						window.location.href = './details.html'
+						window.open('./details.html')
 					})
 				}
 			});
@@ -253,7 +253,7 @@
 			});
 			//点击跳转页面
 			$('.product-cont').on('click',function(){
-				window.location.href = './theProduct.html'
+				window.open('./theProduct.html')
 			})
 		})
 	</script>
