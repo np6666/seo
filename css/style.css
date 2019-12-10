@@ -358,6 +358,7 @@ header>div>nav a.ck {
 .carousel_img ul li {
 	margin-left: 20px;
 	position: relative;
+	cursor: pointer;
 }
 
 .carousel_img ul li p {
@@ -1422,6 +1423,15 @@ header>div>nav a.ck {
 
 .del-list ul li img:last-child {
 	float: right;
+}
+
+.det-video {
+	margin-top: 40px;
+}
+
+.det-video video {
+	margin: 0 auto;
+	display: block;
 }
 
 @media screen and (max-width: 1600px) {
