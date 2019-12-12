@@ -1509,6 +1509,38 @@ header>div>nav a.ck {
 	margin: 0 auto;
 	display: block;
 }
+.culture-box{
+	height: 440px;
+	background: none;
+	margin:72px 0 0;
+}
+.culture-wh{
+	position: inherit !important;
+	transform: none !important;
+	top: inherit !important;
+	left: inherit !important;
+	right: inherit !important;
+	bottom: inherit !important;
+	border: 0 !important;
+	box-shadow: 0 0 12px rgba(0,0,0,.4);
+}
+.culture-wh>div{
+	padding:22px 42px !important;
+}
+.culture-box h3{
+	margin: 0 !important;
+}
+.culture-wh>div>p{
+	padding: 0 !important;
+	line-height: 24px;
+	text-indent: inherit !important;
+}
+.culture-box-ul h3{
+	font-weight: normal;
+}
+.culture-box-ul ul li p:nth-child(2){
+	color: #666;
+}
 
 @media screen and (max-width: 1600px) {
 	.banner {
