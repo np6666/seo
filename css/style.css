@@ -1099,11 +1099,11 @@ header>div>nav a.ck {
 	margin-bottom: 6px;
 }
 
-.relation-bj ul li:first-child,
+/*.relation-bj ul li:first-child,
 .relation-bj ul li:nth-child(2) {
 	padding-right: 100px;
 	text-align: center;
-}
+}*/
 
 .relation-bj ul li img {
 	display: inline-block;
@@ -1524,10 +1524,10 @@ header>div>nav a.ck {
 		font-size: 28px;
 		line-height: 50px;
 	}
-	.relation-bj ul li:first-child,
+	/*.relation-bj ul li:first-child,
 	.relation-bj ul li:nth-child(2) {
 		padding-right: 20%;
-	}
+	}*/
 	.pro-box {
 		padding-top: 220px;
 	}
