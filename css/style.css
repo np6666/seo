@@ -967,7 +967,7 @@ header>div>nav a.ck {
 	font-weight: normal;
 	font-size: 22px;
 	color: #676767;
-	margin:40px 0 60px;
+	margin: 40px 0 60px;
 }
 
 .portable>h4 b {
@@ -977,20 +977,58 @@ header>div>nav a.ck {
 .cooperation-ul {
 	width: 100%;
 	overflow: hidden;
-	padding: 100px 130px 0;
 	display: -webkit-flex;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-bottom: 18px;
+	position: relative;
 }
 
-.cooperation-ul li p {
+.cooperation-ul:before {
+	content: '';
+	width: 100%;
+	height: 440px;
+	background: #ccc;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.cooperation-ul h3 {
+	width: 100%;
+	padding: 60px 0 56px;
 	text-align: center;
-	padding: 12px 0 120px;
 	color: #666;
-	font-size: 14px;
-	line-height: 25px;
+}
+
+.cooperation-ul .type-area {
+	width: 1062px !important;
+}
+
+.cooperation-ul ul {
+	width: 100%;
+	overflow: hidden;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cooperation-ul ul li {
+	width: 483px;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+
+.cooperation-ul ul li img {
+	width: 100%;
+	float: left;
 }
 
 .culture-p {
@@ -998,6 +1036,44 @@ header>div>nav a.ck {
 	line-height: 25px;
 	padding: 22px 27% 30px;
 	color: #666;
+}
+
+.coop-ms h3 {
+	padding: 46px 0 75px;
+}
+
+.coop-ms ul {
+	width: 100%;
+	overflow: hidden;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+.coop-ms ul li {
+	width: 199px;
+	height: 355px;
+	text-align: center;
+	background: url(../images/cooperation_mos_bj.png) no-repeat;
+	background-size: 100%;
+	margin-right: 76px;
+	padding-top: 288px;
+	color: #FFF;
+	font-size: 40px;
+}
+
+.coop-ms ul li:last-child {
+	margin: 0;
+}
+
+.coop-ms p {
+	text-align: center;
+	font-size: 42px;
+	padding: 86px 0;
+	color: #666;
+	font-weight: bold;
 }
 
 .relation-bj {
