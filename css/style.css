@@ -68,7 +68,7 @@ header>div>nav {
 
 header>div>nav a {
 	/*width: 110px;*/
-	font-size: 30px;
+	font-size: 24px;
 	color: #999;
 	font-weight: bold;
 	text-align: center;
@@ -194,7 +194,7 @@ header>div>nav a.ck {
 }
 
 .customer ul li p {
-	font-size: 14px;
+	font-size: 18px;
 	text-align: center;
 	line-height: 26px;
 	color: #999;
@@ -255,7 +255,7 @@ header>div>nav a.ck {
 }
 
 .company>div {
-	width: 1090px;
+	width: 1170px;
 	height: 436px;
 	overflow: hidden;
 	background: #FFF;
@@ -640,11 +640,12 @@ header>div>nav a.ck {
 }
 
 .manifesto p {
-	font-size: 14px;
+	font-size: 18px;
 	color: #999;
 	max-width: 710px;
-	line-height: 25px;
+	line-height: 30px;
 	margin: 0 auto;
+	text-indent: 2em;
 }
 
 .manifesto p:nth-child(2) {
@@ -732,9 +733,10 @@ header>div>nav a.ck {
 
 .product-cont-list .pro-p {
 	padding: 54px 16.5% 90px;
-	font-size: 12px;
+	font-size: 18px;
 	color: #999;
 	line-height: 22px;
+	text-indent: 2em;
 }
 
 .product-cont-list .pro-img {
@@ -777,10 +779,11 @@ header>div>nav a.ck {
 }
 
 .product-cont-list .pro-three dl dd p {
-	font-size: 12px;
+	font-size: 18px;
 	color: #999;
 	line-height: 22px;
-	padding: 40px 0 25px;
+	text-indent: 2em;
+	/*padding: 40px 0 25px;*/
 }
 
 .product-cont-list .pro-three dl dd img {
@@ -790,7 +793,8 @@ header>div>nav a.ck {
 }
 
 .product-cont-list .pro-p3 {
-	text-indent: 1em;
+	text-indent: 2em;
+	padding-bottom: 60px;
 }
 
 .product-cont-list .pro-four-img img:first-child {
@@ -823,7 +827,7 @@ header>div>nav a.ck {
 }
 
 .product-cont-list .pro-six {
-	padding: 30px 115px 16px;
+	padding: 30px 80px 16px;
 	display: -webkit-flex;
 	display: flex;
 	flex-direction: row;
@@ -839,11 +843,14 @@ header>div>nav a.ck {
 }
 
 .product-cont-list .pro-six p {
-	width: 360px;
-	font-size: 12px;
+	width: 460px;
+	font-size: 16px;
 	line-height: 22px;
 	color: #999;
-	text-indent: 1em;
+	text-indent: 2em;
+}
+.product-cont-list .pro-six p font{
+	display: block;
 }
 
 .product-cont-list .pro-six-img img {
@@ -861,6 +868,10 @@ header>div>nav a.ck {
 .product-cont-list .pro-seven-img img:last-child {
 	width: 458px;
 	height: 273px;
+}
+
+.pro-seven-p{
+	padding-bottom: 60px !important;
 }
 
 .product-cont-list .pro-eight {
@@ -881,9 +892,10 @@ header>div>nav a.ck {
 
 .product-cont-list .pro-eight p {
 	width: 460px;
-	font-size: 12px;
+	font-size: 18px;
 	color: #999;
 	padding-right: 8%;
+	text-indent: 2em;
 }
 
 .product-cont-list .pro-eight-img img {
@@ -1063,9 +1075,10 @@ header>div>nav a.ck {
 
 .transmitter dd p {
 	padding: 30px 0 0 52px;
-	font-size: 14px;
-	line-height: 25px;
+	font-size: 18px;
+	line-height: 30px;
 	color: #999;
+	text-indent: 2em;
 }
 
 .noopsyche {
@@ -1120,14 +1133,15 @@ header>div>nav a.ck {
 }
 
 .noopsyche>ul li p {
-	font-size: 14px;
+	font-size: 18px;
 	color: #999;
-	line-height: 25px;
+	line-height: 30px;
 	padding: 30px 0 58px;
+	text-indent: 2em;
 }
 
 .cloud-data dl dd p {
-	padding: 30px 64px 0 0;
+	padding: 20px 30px 0 0;
 }
 
 .grade {
@@ -1187,10 +1201,11 @@ header>div>nav a.ck {
 }
 
 .portable>p {
-	font-size: 14px;
-	line-height: 25px;
+	font-size: 18px;
+	line-height: 30px;
 	padding: 60px 122px 20px;
 	color: #999;
+	text-indent: 2em;
 }
 
 .portable-video {
@@ -1295,8 +1310,8 @@ header>div>nav a.ck {
 }
 
 .culture-p {
-	font-size: 14px;
-	line-height: 25px;
+	font-size: 16px;
+	line-height: 30px;
 	padding: 22px 27% 30px;
 	color: #999;
 }
@@ -1436,7 +1451,7 @@ header>div>nav a.ck {
 	line-height: 83px;
 	font-size: 30px;
 	color: #666;
-	margin: 0 0 38px;
+	margin: 0 0 25px;
 	position: relative;
 }
 
@@ -1452,9 +1467,12 @@ header>div>nav a.ck {
 }
 
 .pro-one ul li p {
-	font-size: 12px;
+	font-size: 18px;
 	color: #999;
-	line-height: 25px;
+	line-height: 30px;
+	text-indent: 2em;
+	position:relative;
+	z-index: 2;
 }
 
 .pro-one ul li:before {
@@ -1471,6 +1489,13 @@ header>div>nav a.ck {
 	height: 210px;
 	left: -28px;
 	bottom: -20px;
+}
+.pro-one ul li:nth-child(3){
+	padding: 0 45px 0 38px;
+}
+.pro-one ul li:nth-child(3) h3{
+	line-height:75px;
+	margin-bottom: 15px;
 }
 
 .pro-one ul li:nth-child(2):before,
@@ -1551,9 +1576,10 @@ header>div>nav a.ck {
 }
 
 .pro-box-ul>li>ol li p {
-	font-size: 12px;
+	font-size: 18px;
 	color: #999;
-	line-height: 20px;
+	line-height: 30px;
+	text-indent: 2em;
 }
 
 .ul-one li:first-child h3 {
@@ -1565,23 +1591,23 @@ header>div>nav a.ck {
 }
 
 .ul-one li:nth-child(2) ol {
-	align-items: flex-end !important;
+	/*align-items: flex-end !important;*/
 }
 
 .ul-one li:nth-child(2) ol li:first-child {
-	margin-right: 50px;
+	margin-right: 30px;
 }
 
 .ul-one li:nth-child(2) ol li:nth-child(2) {
-	margin-right: 32px;
+	/*margin-right: 32px;*/
 }
 
 .ul-one li:nth-child(3) ol li:first-child {
-	margin-right: 20px;
+	margin-right: 50px;
 }
 
 .ul-one li:nth-child(3) ol li:nth-child(2) {
-	margin-right: 65px;
+	/*margin-right: 65px;*/
 }
 
 .ul-one li:nth-child(3) ol li:nth-child(3) p {
@@ -1805,11 +1831,14 @@ header>div>nav a.ck {
 .culture-wh>div>p {
 	padding: 0 !important;
 	line-height: 24px;
-	text-indent: inherit !important;
 }
 
 .culture-box-ul ul li p:nth-child(2) {
 	color: #666;
+}
+.pro-box-two .ul-one>li:nth-child(3) ol>li:nth-child(1),
+.pro-box-two .ul-one>li:nth-child(3) ol>li:nth-child(2){
+	margin-right: 15px;
 }
 
 @media screen and (max-width: 1600px) {
