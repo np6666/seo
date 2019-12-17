@@ -735,7 +735,7 @@ header>div>nav a.ck {
 	padding: 54px 16.5% 90px;
 	font-size: 18px;
 	color: #999;
-	line-height: 22px;
+	line-height: 30px;
 	text-indent: 2em;
 }
 
@@ -760,7 +760,7 @@ header>div>nav a.ck {
 }
 
 .product-cont-list .pro-three {
-	padding: 50px 76px 0 36px;
+	padding: 30px 58px 0 36px;
 }
 
 .product-cont-list .pro-three dl {
@@ -771,6 +771,7 @@ header>div>nav a.ck {
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .product-cont-list .pro-three dl dt img {
@@ -781,7 +782,7 @@ header>div>nav a.ck {
 .product-cont-list .pro-three dl dd p {
 	font-size: 18px;
 	color: #999;
-	line-height: 22px;
+	line-height: 30px;
 	text-indent: 2em;
 	/*padding: 40px 0 25px;*/
 }
@@ -794,7 +795,7 @@ header>div>nav a.ck {
 
 .product-cont-list .pro-p3 {
 	text-indent: 2em;
-	padding-bottom: 60px;
+	padding: 30px 16.5% 30px;
 }
 
 .product-cont-list .pro-four-img img:first-child {
@@ -827,7 +828,7 @@ header>div>nav a.ck {
 }
 
 .product-cont-list .pro-six {
-	padding: 30px 80px 16px;
+	padding: 10px 80px 0;
 	display: -webkit-flex;
 	display: flex;
 	flex-direction: row;
@@ -843,9 +844,9 @@ header>div>nav a.ck {
 }
 
 .product-cont-list .pro-six p {
-	width: 460px;
+	width: 470px;
 	font-size: 16px;
-	line-height: 22px;
+	line-height: 30px;
 	color: #999;
 	text-indent: 2em;
 }
@@ -871,7 +872,7 @@ header>div>nav a.ck {
 }
 
 .pro-seven-p{
-	padding-bottom: 60px !important;
+	padding:20px 16.5% 25px !important;
 }
 
 .product-cont-list .pro-eight {
@@ -1141,7 +1142,7 @@ header>div>nav a.ck {
 }
 
 .cloud-data dl dd p {
-	padding: 20px 30px 0 0;
+	padding: 20px 15px 0 0;
 }
 
 .grade {
@@ -1491,7 +1492,7 @@ header>div>nav a.ck {
 	bottom: -20px;
 }
 .pro-one ul li:nth-child(3){
-	padding: 0 45px 0 38px;
+	padding: 0 48px 0 38px;
 }
 .pro-one ul li:nth-child(3) h3{
 	line-height:75px;
@@ -1555,7 +1556,7 @@ header>div>nav a.ck {
 	background: #FFF;
 	box-shadow: 0 0 12px rgba(0, 0, 0, .6);
 	margin-bottom: 54px;
-	padding: 20px 46px 40px 64px;
+	padding: 20px 48px 40px 55px;
 }
 
 .pro-box-ul>li h3 span {
@@ -1587,7 +1588,7 @@ header>div>nav a.ck {
 }
 
 .ul-one li:first-child ol li:first-child {
-	margin-right: 75px;
+	margin-right: 65px;
 }
 
 .ul-one li:nth-child(2) ol {
@@ -1595,6 +1596,9 @@ header>div>nav a.ck {
 }
 
 .ul-one li:nth-child(2) ol li:first-child {
+	margin-right: 50px;
+}
+.pro-box-one li:nth-child(2) ol li:first-child{
 	margin-right: 30px;
 }
 
