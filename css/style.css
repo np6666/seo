@@ -1,10 +1,7 @@
-html {
-	font-family: "微软雅黑", "microsoft yahei" !important;
-}
-
 body {
 	background: #FFF;
 	padding-top: 80px;
+	font-family: "微软雅黑", "microsoft yahei" !important;
 }
 
 ul,
