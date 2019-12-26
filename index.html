@@ -32,7 +32,10 @@
 			<section class="video-box">
 				<h3 class="small-title">赛事活动<span>Competition activities</span></h3>
 				<div class="type-area">
-					<div class="video">视频占位</div>
+					<div class="video" style="background: rgba(0,0,0,.5);">
+						<video width="100%" height="100%" src="" autoplay controls>
+						</video>
+					</div>
 					<div class="carousel-video-list">
 						<button class="top"></button>
 						<div class="video-list-c">
@@ -245,6 +248,7 @@
 	<script type="text/javascript" src="js/globalZj.js?v=1.0.0" ></script>
 	<script>
 		$(function(){
+			zj.render('index');
 			$('.kefu').on({
 				mouseover: function(){
 					$('.popup-info').removeClass('mui-hidden');
@@ -267,61 +271,6 @@
 					}
 				})
 			}
-			zj.roll('.roll',{
-				rollBox:'.roll-ul',
-				rollSonBox: '.roll-ul li',
-				margin:true,
-				direction: 'Left',
-				endNum: 3,
-				loop: {
-					num: 3
-				},
-				butOne: '.roll .l',
-				butTwo: '.roll .r'
-			}, function(params){
-				let li = $(params.rollSonBox);
-				for(let i=0,len=li.length;i<len;i++){
-					$(li[i]).on('click',function(){
-						window.open('./details.html')
-					})
-				}
-			});
-			zj.roll('.video-list-c',{
-				rollBox:'.video-list-c ul',
-				rollSonBox: '.video-list-c ul li',
-				margin:true,
-				direction: 'Bottom',
-				loop: {
-					num: 4
-				},
-				endNum: 2,
-				butOne: '.carousel-video-list .top',
-				butTwo: '.carousel-video-list .bottom'
-			},function(params){
-				let li = $(params.rollSonBox);
-				for(let i=0,len=li.length;i<len;i++){
-					$(li[i]).on('click',function(){
-						$(this).parent().find('li').removeClass('ck');
-						$(this).addClass('ck');
-					})
-				}
-			});
-			zj.roll('.product-cont',{
-				rollBox:'.product-cont-list',
-				rollSonBox: '.product-cont-list>li',
-				endNum: 1,
-				loop: {
-					num: 3
-				},
-				butOne: '.position .pro-l',
-				butTwo: '.position .pro-r'
-			},null,function(obj,params){
-				if(obj.num >= 2){
-					$(params.rollSonBox).eq(0).css({'visibility':'hidden'});
-				}else{ 
-					$(params.rollSonBox).eq(0).css({'visibility':'inherit'});
-				}
-			});
 		})
 	</script>
 </html>

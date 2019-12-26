@@ -25,7 +25,7 @@
 			</div>
 		</header>
 		<div class="content">
-			<section class="product">
+			<section class="product theOneBox">
 				<h3 class="small-title">最新产品<span>Latest product</span></h3>
 				<div class="product-cont">
 					<h3 class="small-title">智能轻武器模拟射击系统<span>Intelligent small arms analog firing system</span></h3>
@@ -75,7 +75,7 @@
 					</ul>
 				</div>
 			</section>
-			<section class="product">
+			<section class="product theTwoBox">
 				<h3 class="small-title">产品简介<span>Product introduction</span></h3>
 				<div class="product-cont">
 					<h3 class="small-title">激光发射器<span>Laser transmitter</span></h3>
@@ -95,7 +95,7 @@
 					</dl>
 				</div>
 			</section>
-			<section class="product">
+			<section class="product theThreeBox">
 				<h3 class="small-title">智能传输组<span>Intelligent transmission group</span></h3>
 				<div class="product-cont noopsyche">
 					<div>
@@ -124,7 +124,7 @@
 					</ul>
 				</div>
 			</section>
-			<section class="product">
+			<section class="product theFourBox">
 				<h3 class="small-title">云端数据<span>The cloud data</span></h3>
 				<div class="product-cont cloud-data">
 					<dl class="transmitter">
@@ -145,7 +145,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="product">
+			<section class="product theFiveBox">
 				<h3 class="small-title">便携箱组<span>The portable box set</span></h3>
 				<div class="product-cont noopsyche portable">
 					<div>
@@ -194,7 +194,11 @@
 		</div>
 	</body>
 	<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
+	<script type="text/javascript" src="js/globalZj.js" ></script>
 	<script>
+		$(function(){
+			zj.render('theProduct');
+		})
 		$('.kefu').on({
 			mouseover: function(){
 				$('.popup-info').removeClass('mui-hidden');
